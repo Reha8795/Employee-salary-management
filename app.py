@@ -57,13 +57,14 @@ def search():
         search_term = request.form['search_term']
         conn = sqlite3.connect('esd.db')
         c = conn.cursor()
-        c.execute("SELECT * FROM esd WHERE name LIKE ?", ('%'+search_term+'%',))
+        c.execute("SELECT * FROM esd WHERE fname LIKE ?", ('%'+search_term+'%',))
         data = c.fetchall()
         conn.close()
         return render_template('search_result.html', data=data, search_term=search_term)
     else:
         return render_template('search.html')
-    
+
+
 @app.route('/search_result')    
 def search_result():
     search_term = request.args.get('search_term')
