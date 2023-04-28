@@ -36,7 +36,7 @@ def add():
         c.execute("INSERT INTO esd (fname, lname, phone, job, dept, salary, date, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", (fname, lname, phone, job, dept, salary, date, status))
         conn.commit()
         conn.close()
-        return redirect(url_for('index'))
+        return redirect(url_for('view'))
     else:
         current_date = datetime.now().strftime('%Y-%m-%d')
         return render_template('add.html', current_date=current_date)
@@ -84,10 +84,10 @@ def delete():
     c = conn.cursor()
     c.execute("DELETE FROM esd WHERE id=?", (id,))
     conn.commit()
-    c.execute("SELECT * FROM esd WHERE name LIKE ?", ('%'+search_term+'%',))
+    c.execute("SELECT * FROM esd WHERE fname LIKE ? OR lname LIKE ?", ('%'+search_term+'%', '%'+search_term+'%'))
     data = c.fetchall()
     conn.close()
-    return render_template('view.html', data=data)
+    return redirect(url_for('view'))
 
 @app.route('/delete_form')
 def delete_form():
@@ -95,3 +95,4 @@ def delete_form():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
