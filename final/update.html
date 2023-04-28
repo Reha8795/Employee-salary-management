@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Search Employee Records</title>
+	<style>
+		h1 {
+            text-align: center;
+            font-family: American Typewriter (serif);
+            font-size: 36px;
+            margin-top: 100px;
+        }
+        body {
+            background-image: url(https://t3.ftcdn.net/jpg/02/74/63/90/360_F_274639050_ddLeyFuQGwEjtTP0e2Y9ZZesSo2Mj6JD.jpg);
+			background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+		}
+
+		/* Set the font and font size for the entire page */
+		body,
+		input {
+			font-family: Arial, sans-serif;
+			font-size: 16px;
+		}
+
+		/* Style the search form */
+		form {
+			display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px white;
+            background-color: rgba(150, 237, 210, 0.329)
+		}
+
+		/* Style the search input field and label */
+		label,
+		input[type="text"] {
+			display: block;
+			margin: 10px auto;
+			width: 100%;
+			max-width: 400px;
+			padding: 10px;
+			border: none;
+			background-color: #4ec3ce;
+			color: #000000;
+			border-radius: 10px;
+			box-sizing: border-box;
+			text-align: center;
+		}
+
+		/* Style the search button */
+		input[type="submit"] {
+			display: block;
+			margin: 10px auto;
+			padding: 10px;
+			border: none;
+			background-color: #85e4a3;
+			color: #000000;
+			border-radius: 10px;
+			box-sizing: border-box;
+			text-align: center;
+			cursor: pointer;
+		}
+        input[type="submit"]:hover {
+            background-color: #0fa23e;
+            color: #ffffff;
+        }
+	</style>
+</head>
+
+<body>
+	<h1>Update Employee Record</h1>
+	<form method="POST" action="/update">
+        <label for="search_term">Employee Name:</label>
+        <input type="text" name="search_term" id="search_term" value="{{ search_term }}" required>
+        <br>
+        <label for="id">Employee ID:</label>
+        <input type="text" name="id" id="id" required>
+        <br>
+        <label for="job">Job:</label>
+        <input type="text" name="job" id="job" required>
+        <br>
+        <label for="dept">Department:</label>
+        <input type="text" name="dept" id="dept" required>
+        <br>
+        <label for="salary">Salary:</label>
+        <input type="text" name="salary" id="salary" required>
+        <br>
+        <input type="submit" value="Update">
+        
+    </form>
+</body>
+
+
+</html>

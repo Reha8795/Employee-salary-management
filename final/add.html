@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add New Employee Record</title>
+    <style>
+        h1 {
+            text-align: center;
+            font-family: American Typewriter (serif);
+            font-size: 36px;
+            margin-top: 50px;
+        }
+
+        body {
+            background-image: url(https://t3.ftcdn.net/jpg/02/74/63/90/360_F_274639050_ddLeyFuQGwEjtTP0e2Y9ZZesSo2Mj6JD.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px white;
+            background-color: rgba(149, 230, 254, 0.329)
+           
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: white;
+            color: rgb(1, 1, 1);
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #14e070;
+            color: #0a0909;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #4585c1;
+            color: #fff1fd;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Add New Employee Record</h1>
+    <form method="POST">
+        <label>First Name</label>
+        <input type="text" name="fname" required><br>
+        <label>Last Name</label>
+        <input type="text" name="lname" required><br>
+        <label>Phone Number</label>
+        <input type="number" name="phone" required><br>
+        <label>JOB</label>
+        <input type="text" name="job" required><br>
+        <label>Department</label>
+        <input type="text" name="dept" required><br>
+        <label>Salary</label>
+        <input type="number" name="salary" required><br>
+        <label>Date</label>
+        <input type="text" name="date" value="{{ current_date }}" required><br>
+        <label>Status</label>
+        <input type="text" name="status" required><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>
