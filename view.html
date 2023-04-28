@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>View All Attendance Records</title>
+    <script>
+        function goToPage() {
+            window.location.href = "http://127.0.0.1:5000";
+        }
+    </script>
+    <title>SALARY RECORDS</title>
     <style>
         body {
-            background-color: black;
+            background-image: url(https://t3.ftcdn.net/jpg/02/74/63/90/360_F_274639050_ddLeyFuQGwEjtTP0e2Y9ZZesSo2Mj6JD.jpg);
+            background-size: cover;
             color: white;
             font-family: Arial, sans-serif;
             font-size: 16px;
+            margin: 0;
+            padding: 0;
         }
+
         h1 {
             text-align: center;
         }
@@ -23,15 +32,16 @@
             border-bottom: 1px solid white;
         }
         th {
-            background-color: #333;
+            background-color: #fff4f4;
+            color: rgb(23, 61, 116);
         }
         tr:nth-child(even) {
-            background-color: #555;
+            background-color: #47a2bb;
         }
     </style>
 </head>
 <body>
-    <h1>View All Salary Records</h1>
+    <h1>SALARY RECORDS</h1>
     <table>
         <tr>
             <th>ID</th>
@@ -59,5 +69,11 @@
         </tr>
         {% endfor %}
     </table>
+
+    <br>
+    <div align="center">
+        <button onclick="goToPage()">Go to Homepage</button>
+    </div>
+
 </body>
 </html>
