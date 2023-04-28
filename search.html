@@ -5,10 +5,22 @@
 	<title>Search Employee Records</title>
 	<style>
 		/* Set the background color to black and text color to white */
-		body {
-			background-color: #000000;
-			color: #ffffff;
-		}
+		h1 {
+            text-align: center;
+            font-family: American Typewriter (serif);
+            font-size: 36px;
+            margin-top: 100px;
+        }
+
+        body {
+            background-image: url(https://t3.ftcdn.net/jpg/02/74/63/90/360_F_274639050_ddLeyFuQGwEjtTP0e2Y9ZZesSo2Mj6JD.jpg);
+            background-position: center center;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+        }
 
 		/* Set the font and font size for the entire page */
 		body,
@@ -19,9 +31,17 @@
 
 		/* Style the search form */
 		form {
-			margin: 0 auto;
-			max-width: 500px;
-			text-align: center;
+			display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px white;
+            background-color: rgba(145, 245, 210, 0.329)
 		}
 
 		/* Style the search input field and label */
@@ -52,15 +72,21 @@
 			box-sizing: border-box;
 			text-align: center;
 			cursor: pointer;
+            transition: all 0.3s ease;
 		}
+		
+		input[type="submit"]:hover {
+            background-color: #290e2b;
+            color: #f8f2f7;
+        }
 	</style>
 </head>
 
 <body>
-	<h2>Search Employee Record</h2>
+	<h1>Search Employee Record</h1>
 	<form method="POST" action="/search">
 		<p>
-			<label for="search_term">Name:</label>
+			<label for="search_term">Enter Employee Name:</label>
 			<input type="text" name="search_term" id="search_term" required>
 		</p>
 		<p>
